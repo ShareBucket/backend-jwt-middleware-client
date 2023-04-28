@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>ShareBucket.JwtMiddlewareClient</id>
+    <version>1.0.0</version>
+    <title>Jwt Middleware Client ShareBucket</title>
+    <authors>Emanuele Cucchietti</authors>
+    <owners>Emanuele Cucchietti</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>Jwt Middleware Client for Sharebucket project.</description>
+    <repository type="git" url="https://github.com/ShareBucket/backend-jwt-middleware-client" />
+  </metadata>
+</package>
