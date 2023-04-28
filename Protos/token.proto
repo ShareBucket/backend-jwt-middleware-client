@@ -1,18 +1,28 @@
 syntax = "proto3";
 
 option csharp_namespace = "ShareBucket.JwtMiddlewareClient.GrpServices";
-
 service TokenService {
-	rpc TokenValidationRequest (TokenRequest) returns (TokenResponse) {}
+	rpc TokenValidationRequest (TokenParam) returns (TokenValidResponse) {}
+	rpc TokenGenerationRequest (IdUserParam) returns (TokenResponse) {}
 }
 
 message DefaultRequest{}
 
-message TokenRequest{
+message TokenParam{
 	string token = 1;
 }
 
-message TokenResponse{
+message TokenValidResponse{
 	bool isValid = 1;
+	int32 userId = 2;
+}
+
+
+message IdUserParam{
+	int32 id = 1;
+}
+
+message TokenResponse{
+	string token = 1;
 	int32 userId = 2;
 }

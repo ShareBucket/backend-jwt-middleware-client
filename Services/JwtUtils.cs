@@ -22,7 +22,7 @@ namespace ShareBucket.JwtMiddlewareClient.Services
             var client = new TokenService.TokenServiceClient(channel);
 
 
-            var reply = client.TokenValidationRequest(new TokenRequest { Token = token });
+            var reply = client.TokenValidationRequest(new TokenParam { Token = token });
 
             if (reply.IsValid)
             {
