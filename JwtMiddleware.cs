@@ -22,7 +22,13 @@ namespace ShareBucket.JwtMiddlewareClient
 
         public async Task Invoke(HttpContext context, DataContext dbContext)
         {
-            var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            // Deprecated
+            // var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            // if(token == null)
+            // {
+            //     token = context.Request.Cookies["X-Access-Token"];
+            // }
+            var token = context.Request.Cookies["X-Access-Token"];
             var userId = _jwtUtils.ValidateToken(token);
             if (userId != null)
             {
